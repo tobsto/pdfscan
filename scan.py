@@ -18,7 +18,6 @@ def run(cmd, log):
 	fstderr.close()
 	process.communicate()
 	status=process.returncode
-	print status
 	if status!=0:
 		print "Error while executing"
 		print cmd
@@ -49,7 +48,7 @@ def main():
 	parser = argparse.ArgumentParser(description='Scan several pages and merge them into a single pdf file')
         parser.add_argument('-o', '--output', default="scan.pdf", help='output file name')
         parser.add_argument('-p', '--pages', default=1, help='number of pages to scan', type=int)
-        parser.add_argument('-b', '--brightness_contrast', default="50x40", help='brightness contrast option for imagemagick')
+        parser.add_argument('-b', '--brightness_contrast', default="50x40", help='brightness contrast option for imagemagick e.g. 50x40 for letters or 70x70 for ID-cards')
         parser.add_argument('-c', '--color', default="Gray", help='colorspace option for imagemagick')
 
 	args = parser.parse_args()
