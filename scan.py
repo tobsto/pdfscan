@@ -64,10 +64,10 @@ def main():
 		cmd="mv temp_001.pdf " +  args.output
 		run(cmd,log)
 	else:
-		cmd="pdfjoin "
+		cmd="pdfjoin --outfile "
+		cmd=cmd + args.output + " "
 		for page in range(1,args.pages+1):
 			cmd=cmd + "temp_%03i.pdf " % page
-		cmd=cmd + args.output
 		run(cmd,log)
 		
 
